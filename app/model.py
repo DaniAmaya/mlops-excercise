@@ -48,6 +48,7 @@ from datetime import datetime
 
 import evaluate
 import numpy as np
+from sklearn.metrics import classification_report
 from transformers import (
     AutoModelForSequenceClassification,
     DataCollatorWithPadding,
@@ -63,6 +64,8 @@ def train_and_save_model(
     tokenizer,
     tokenized_train,
     tokenized_test,
+    tokenized_val,
+    df_val,
     num_train_epochs,
     output_dir,
     random_state,
@@ -116,6 +119,18 @@ def train_and_save_model(
     trainer.train()
 
     # Save the model with the modified name
-    trainer.save_model()
+    # Includes all the necessary information for continuing training or further evaluation
+    trainer.save_model(output_dir_with_timestamp)
+
+    # Save the model, tokenizer, and configuration in binary format
+    # Ideal with dealing with the model outside of the training loop
+    # You can load this model later using AutoModelForSequenceClassification.from_pretrained()
+    model.save_pretrained(output_dir_with_timestamp)
+
+    # Validation
+    preds = trainer.predict(tokenized_val)
+    preds = np.argmax(preds[:3][0], axis=1)  # preds[:3][1]
+    GT = df_val["label"].tolist()
+    print(classification_report(GT, preds))
 
     return model
