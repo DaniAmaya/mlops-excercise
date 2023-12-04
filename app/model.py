@@ -1,3 +1,48 @@
+"""
+model.py - Module for training and saving a sequence classification model
+
+Overview:
+    This module provides a function for training a sequence classification model using the Hugging Face Transformers library.
+    The model is trained on tokenized text data and evaluated on a separate tokenized test set.
+
+Functions:
+    - train_and_save_model(
+        model_name,
+        num_labels,
+        tokenizer,
+        tokenized_train,
+        tokenized_test,
+        num_train_epochs,
+        output_dir,
+        random_state
+    ): Initializes, trains, and saves a sequence classification model.
+
+Dependencies:
+    - datetime
+    - evaluate
+    - numpy
+    - transformers
+
+Usage:
+    from model import train_and_save_model
+
+    # Example usage
+    trained_model = train_and_save_model(
+        model_name="bert-base-uncased",
+        num_labels=2,
+        tokenizer=tokenizer,
+        tokenized_train=train_dataset,
+        tokenized_test=test_dataset,
+        num_train_epochs=5,
+        output_dir="/path/to/save/model",
+        random_state=42,
+    )
+
+Note:
+    - Make sure to install the required dependencies (datetime, evaluate, numpy, transformers) before using this module.
+    - Ensure that the tokenized datasets and tokenizer are prepared before calling this function.
+"""
+
 # Libraries
 from datetime import datetime
 
@@ -27,7 +72,7 @@ def train_and_save_model(
         model_name, num_labels=num_labels
     )
 
-    # Train model
+    # Define metrics and data collator
     data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
     metric = evaluate.load("accuracy")
 
@@ -45,6 +90,7 @@ def train_and_save_model(
     # Modify the output directory or model name with the timestamp
     output_dir_with_timestamp = f"{output_dir}{timestamp}_text_classification_model"
 
+    # Define training arguments
     training_args = TrainingArguments(
         output_dir=output_dir_with_timestamp,
         learning_rate=2e-4,
@@ -56,6 +102,7 @@ def train_and_save_model(
         logging_strategy="epoch",
     )
 
+    # Train the model
     trainer = Trainer(
         model=model,
         args=training_args,

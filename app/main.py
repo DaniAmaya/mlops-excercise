@@ -1,3 +1,46 @@
+"""
+main.py - Script for training a machine learning model using modularized components
+
+Overview:
+    This script facilitates the training of a machine learning model by leveraging modularized components
+    for data processing, preprocessing, model training, and other tasks. It follows a structured workflow
+    to ensure code organization and reusability.
+
+Dependencies:
+    - Python 3.x
+    - dotenv
+    - pandas
+    - Hugging Face Transformers
+    - (other dependencies as needed)
+
+Usage:
+    1. Ensure that the required dependencies are installed. You can install them using:
+        pip install -r requirements.txt
+
+    2. Set up a .env file with the necessary configuration parameters. Example:
+        DATA_PATH=/path/to/your/dataset.csv
+        TEXT_COLUMN_NAME=text
+        LABEL_COLUMN_NAME=label
+        MODEL_NAME=distilbert-base-uncased
+        TEST_SIZE=0.3
+        VAL_SIZE=0.5
+        RANDOM_STATE=4242
+        NUM_TRAIN_EPOCHS=10
+        OUTPUT_DIR=/path/to/save/model
+
+    3. Run the script:
+        python main.py
+
+Workflow:
+    1. Load environment variables from the .env file.
+    2. Clean the dataset using the Cleaner class from the preprocessing module.
+    3. Split the dataset into training, testing, and validation sets.
+    4. Convert datasets to the Hugging Face Dataset format.
+    5. Tokenize the data using the specified model.
+    6. Train and save the machine learning model.
+"""
+
+# Libraries
 import os
 
 from data_processing import convert_to_datasets, split_data, tokenize_data
