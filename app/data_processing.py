@@ -1,3 +1,28 @@
+"""
+data_processing.py - Module for data processing and tokenization
+
+Overview:
+    This module provides functions for splitting datasets into training, testing, and validation sets,
+    converting datasets to the Hugging Face Dataset format, and tokenizing text data using Hugging Face Transformers.
+
+Functions:
+    - split_data(df, test_size, val_size, random_state): Splits a DataFrame into training, testing, and validation sets.
+    - convert_to_datasets(df_train, df_test, df_val): Converts DataFrames to Hugging Face Dataset format.
+    - tokenize_data(model_name, train_dataset, test_dataset, val_dataset): Tokenizes text data using a specified model.
+
+Dependencies:
+    - datasets
+    - sklearn
+    - transformers
+
+Usage:
+    from data_processing import split_data, convert_to_datasets, tokenize_data
+
+Note:
+    - Make sure to install the required dependencies (datasets, sklearn, transformers) before using this module.
+"""
+
+# Libraries
 from datasets import Dataset
 from sklearn.model_selection import train_test_split
 from transformers import AutoTokenizer
