@@ -90,6 +90,8 @@ model = train_and_save_model(
     tokenizer,
     tokenized_train,
     tokenized_test,
+    tokenized_val,
+    df_val,
     num_train_epochs,
     output_dir,
     random_state,

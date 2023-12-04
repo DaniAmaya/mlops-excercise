@@ -84,6 +84,7 @@ class Cleaner:
         df = pd.read_csv(path)
         df.columns = [text_column_name, label_column_name + "_original"]
         id2label = dict(enumerate(df[label_column_name + "_original"].unique()))
+        print(id2label)
         num_labels = len(id2label.keys())
         label2id = {v: k for k, v in id2label.items()}
 
