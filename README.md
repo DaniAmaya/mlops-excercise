@@ -34,6 +34,10 @@ The model architecture used in this project is based on the Hugging Face Transfo
 ## Data
 The training data used for this project is not included in this repository. Remember to upload the .csv file to the 'data' folder.
 
+## Results
+
+<img width="375" alt="Screenshot 2023-12-03 at 7 02 57 PM" src="https://github.com/DaniAmaya/mlops-excercise/assets/20273279/a92def54-93e1-4c7b-a636-5bb6c4453ed5">
+
 ## Acknowledgments
 Hugging Face Transformers: For providing state-of-the-art pre-trained transformer models.
 
