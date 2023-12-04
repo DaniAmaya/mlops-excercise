@@ -9,23 +9,28 @@ This repository contains code for a text classification task using the Transform
 * Transformers library (transformers)
 
 Install the required dependencies using:
+
 ´´´
 pip install -r requirements.txt
 ´´´
 
 ## Training
 To train the text classification model, run the following command:
+
 ´´´
 docker build -t your_image_name .
 docker run --env-file .env your_image_name
 ´´´
+
 Make sure to customize the training parameters, model architecture and HuggingFace Token on the .env file.
 
 ## Inference
 After training, you can use the trained model for text classification. You can execute commands within the running container using:
+
 ´´´
 docker exec -it your-container-name python predict.py "Your input text goes here."
 ´´´
+
 This will output the predicted label for the given text.
 
 ## Model
