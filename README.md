@@ -48,6 +48,9 @@ The metrics for the validation test are the following:
 
 <img width="375" alt="Screenshot 2023-12-03 at 7 02 57 PM" src="https://github.com/DaniAmaya/mlops-excercise/assets/20273279/a92def54-93e1-4c7b-a636-5bb6c4453ed5">
 
+## Proposal
+If you would like to read about a different approach to the text classification problem, proposed by the author, please refer to the Notebook: _Text_classifier_sentence_transformers.ipynb_
+
 ## Acknowledgments
 Hugging Face Transformers: For providing state-of-the-art pre-trained transformer models.
 
