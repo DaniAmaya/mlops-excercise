@@ -21,6 +21,10 @@ To train the text classification model, run the following command:
 docker build -t your_image_name .
 docker run --env-file .env your_image_name
 ```
+If you have an ARM Machine, run the following command instead:
+```
+docker buildx build --platform linux/arm64 --push --tag your_image_name .
+```
 
 Make sure to customize the training parameters, model architecture and HuggingFace Token on the .env file.
 
