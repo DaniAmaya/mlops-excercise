@@ -60,6 +60,7 @@ If you would like to read about a different approach to the text classification 
 
 ## Acknowledgments
 Hugging Face Transformers: For providing state-of-the-art pre-trained transformer models.
+Neat tutorial for text NLP classification: https://www.youtube.com/watch?v=UNezAbTasdE&t=4s
 
 ## Author
 Daniel Amaya
