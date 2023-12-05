@@ -46,7 +46,14 @@ The training data used for this project is not included in this repository. Reme
 ## Results
 The metrics for the validation test are the following:
 
-<img width="375" alt="Screenshot 2023-12-03 at 7 02 57 PM" src="https://github.com/DaniAmaya/mlops-excercise/assets/20273279/a92def54-93e1-4c7b-a636-5bb6c4453ed5">
+<img width="383" alt="Screenshot 2023-12-04 at 6 52 42 PM" src="https://github.com/DaniAmaya/mlops-excercise/assets/20273279/ed2d2834-970e-4a3d-b17a-6ab95f36d060">
+
+## Playground
+If you want to play with the classification model, excecute the following on your docker container and a tab will appear on your browser:
+
+```
+docker run -p <local_port>:<container_port> <your_image_name> streamlit run stream_app.py
+```
 
 ## Proposal
 If you would like to read about a different approach to the text classification problem, proposed by the author, please refer to the Notebook: _Text_classifier_sentence_transformers.ipynb_
