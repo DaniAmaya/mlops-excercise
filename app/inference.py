@@ -26,7 +26,7 @@ Usage:
 
     # Load the model and classify the new text
     id2label = {0: 'MLB-FACIAL_SKIN_CARE_PRODUCTS', 1: 'MLB-MAKEUP', 2: 'MLB-BEAUTY_AND_PERSONAL_CARE_SUPPLIES'}  # Map class indices to labels
-    predicted_label = classify_new_text(latest_subdirectory, new_text, id2label)
+    predicted_label = classify_new_text(output_dir, new_text, id2label)
 
     print(f"The predicted class label for the new text is: {predicted_label}")
 
